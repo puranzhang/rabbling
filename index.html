@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Rabbling</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/jquery.ScrollMagic.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/easing/EasePack.min.js"></script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="lib/plot.js"></script>
+  <script src="lib/regression.min.js"></script>
+  <link href="main.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Unkempt" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <div class="intro">
+    <div class="split-content">
+      <div class="split-left" id="leftPanel">
+        <div class="split-section slide" id="profile1">
+          <p><img alt="stage1" src="data/static/stage1.svg" style="width:500px;height:228px;"><br>
+          <br><br><br><br>
+          <span style="font-size:30px;"><font color="#F4A582">R</font><font color="#565656">(ead)(B)</font>abbling</span><br>
+          <br>
+          Project wasn't built in a day, so does our vocabulary. In fact, for example, we learned nouns differently from verbs, and this starts from our infancy.<br>
+          <br>
+          <i>"R", for "read"; "abbling", for "babbling".</i> We coined <i>"rabbling"</i> for our title to deconstruct the way babies learn language. Here we will show you when and how a baby learn to "rabble" a story that "flies" on the right.</p>
+        </div>
+
+        <div class="split-section slide" id="profile2">
+          <p><img alt="stage1" src="data/static/book.svg" style="width:500px;height:150px;">
+          </p>
+        </div>
+
+        <div class="split-section slide" id="16L"><font style="font-size:30px;font-weight:bold;">16 Months</font> <img alt="stage3" src="data/static/stage2.svg" style="width:304px;height:150px;"></div>
+
+        <div class="split-section slide" id="17L">
+          <p><span style="font-size:30px;font-weight:bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17 Months</span><br>
+          <br>
+          After immersing in human language for several months, most babies have passed the stage where they are only able to use one or more words/fragments with meaning. They have vocabulary of approximately 5-20 words that are made up chiefly of <font color="#CA0020">nouns</font>. They might repeat a word or phrase over and over.</p>
+        </div>
+
+        <div class="split-section slide" id="18L">
+          <p><span style="font-size:30px;font-weight:bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18 Months</span><br>
+          <br>
+          They might repeat a word or phrase over and over. At this age, they produce much jargon with emotional content and are able to follow simple commands (really simple).</p>
+        </div>
+
+        <div class="split-section slide" id="19L"><font style="font-size:30px;font-weight:bold;">19 Months</font> <img alt="stage3" src="data/static/stage3.svg" style="width:304px;height:228px;"></div>
+
+        <div class="split-section slide" id="20L">
+          <p><span style="font-size:30px;font-weight:bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20 Months</span><br>
+          <br>
+          After months of training, babies can now name a number of objects common to his surroundings and are able to use at least two <font color="#92C5DE">prepositions</font>, usually chosen from the following: "in", "on", "under".</p>
+        </div>
+
+        <div class="split-section slide" id="21L">
+          <p><span style="font-size:30px;font-weight:bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;21 Months</span><br>
+          <br>
+          They can combine words into a short sentence with an average length of 1.2 words. Approximately 60&percnt; of what most babies say should be intelligible although their rhythm and fluency are often poor.</p>
+        </div>
+
+        <div class="split-section slide" id="22L"><font style="font-size:30px;font-weight:bold;">22 Months</font> <img alt="stage4" src="data/static/stage4.svg" style="width:304px;height:228px;"></div>
+
+        <div class="split-section slide" id="23L">
+          <p><span style="font-size:30px;font-weight:bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;23 Months</span><br>
+          <br>
+          Approaching two years old, babies' vocabulary grow to approximately 150 - 300 words, yet their volume and pitch of voice are not yet well-controlled.</p>
+        </div>
+
+        <div class="split-section slide" id="24L">
+          <p><span style="font-size:30px;font-weight:bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;24 Months</span><br>
+          <br>
+          They can now use <font color="#0571B0">pronouns</font> like "I", "me" and "you", although me and I are often confused. "My" and "mine" begin to emerge, and babies can responds to such commands as “show me your eyes (nose, mouth, hair)”.</p>
+        </div>
+
+        <div class="split-section slide" id="25L"><font style="font-size:30px;font-weight:bold;">25 Months</font> <img alt="stage5" src="data/static/stage5.svg" style="width:304px;height:228px;"></div>
+
+
+        <div class="split-section slide" id="26L">
+          <p><span style="font-size:30px;font-weight:bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;26 Months</span><br>
+          <br>
+          At this age, they start to use some past tenses and plurals, and know at least three prepositions, usually "in", "on", "under". They can now differentiate "I" and "me"!</p>
+        </div>
+
+        <div class="split-section slide" id="27L">
+          <p><span style="font-size:30px;font-weight:bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;27 Months</span><br>
+          <br>
+          As building their vocabulary, they can handle three-word sentence easily. Body become familiar to them as they know chief parts of body and can indicate these if not name them.</p>
+        </div>
+
+        <div class="split-section slide" id="28L"><font style="font-size:30px;font-weight:bold;">28 Months</font> <img alt="stage6" src="data/static/stage6.svg" style="width:304px;height:228px;"></div>
+
+        <div class="split-section slide" id="29L">
+          <p><span style="font-size:30px;font-weight:bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;29 Months</span><br>
+          <br>
+          Now babies grow their vocabulary to 900 to 1000. About 90&percnt; of what child says should be intelligible. <font color='#F4A582'>Verbs and predicates</font> begin to predominate their language.</p>
+        </div>
+
+        <div class="split-section slide" id="30L">
+          <p><span style="font-size:30px;font-weight:bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;30 Months</span><br>
+          <br>
+          They now understand most simple questions dealing with their environment and activities. They are able to relate their experiences so that reasoning can be followed. Of course, most of them now <font color="#FFF669">can read the story on the right</font>.</p>
+        </div>
+
+        <div class="split-section slide" id="31L">
+          <p><span style="font-size:30px;font-weight:bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#CA0020">Reg</font><font color="#F4A582">res</font><font color="#0571B0">sio</font><font color="#92C5DE">n</font></span><br>
+          <br>
+          As stated and shown, we learn words in different manners. On the right are four cubic polinomial regression lines that show the learning rates of <font color="#ca0020">nouns</font>, <font color="#0571b0">functon words</font>, <font color="#f4a582">predicates</font> and <font color="#92c5de">others</font>.</p>
+        </div>
+
+        <div class="split-section slide" id="32L">
+          <p>We can see that nouns are acquired quicker than others since we get to know concrete objects earlier than others; Then come types such as prepositions; Function words (eg. pronouns) follow since we start to make sense of relationships of objects; Finally we learned predicates and verbs because actions become much more available and interesting to us than before.</p>
+        </div>
+      </div>
+
+      <div class="split-right" id="rightPanel">
+        <div class="split-section" id="rightFly">
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    var regression, storyTags, tagScale;
+    var story = [];
+
+    d3.queue()
+      .defer(d3.text, "data/story.txt")
+      .defer(d3.json, "data/wordBank_npf_tag.json")
+      .defer(d3.json, "data/story_tag.json")
+      .await(function(error, storyText, wordData, rawStoryTags) {
+        regression = plotRegression(wordData);
+        storyTags = rawStoryTags;
+        rawTags = jQuery.extend({}, rawStoryTags);
+
+        tagScale = d3.scaleOrdinal().domain(["Noun", "Predicates", "Function Words", "Others"]).range(['#ca0020', '#f4a582', '#0571b0', '#92c5de']);
+
+        storyText = storyText.split(" ");
+        storyText.forEach(function(d) {
+          let tempD = d.replace(/[.\,\?\"\:\!\”]/g, "");
+          d3.select('#rightFly')
+            .append('span')
+            .attr("id", tempD)
+            .attr("class", "wordBlock")
+            .style("color", tagScale(rawStoryTags[tempD]))
+            .style("font-size", "20px")
+            .style("border", "none")
+            .text(d + "\u00A0");
+          // "\u00A0" to add a space
+          story.push(tempD);
+        });
+        bundle();
+      });
+
+    function bundle() {
+      $(document).ready(function($) {
+
+        let controller = new ScrollMagic.Controller();
+
+        // show word fly
+        for (let i = 16; i < 31; i++) {
+          wordFly(controller, i);
+        }
+
+        // show regression line
+        let dotTL = new TimelineMax({
+          onComplete: word2Dot,
+          onReverseComplete: reverseWord2Dot
+        });
+
+        let fadeout_tween = TweenMax.to('#rightFly > span', 0.2, {
+          opacity: 0,
+        });
+
+        dotTL.add(fadeout_tween);
+
+        let fadeout_scene = new ScrollMagic.Scene({
+            triggerElement: '#30L',
+            triggerHook: "onLeave",
+            reverse: true,
+          })
+          .setTween(dotTL)
+          .addTo(controller);
+
+        var textSpans = [];
+
+        function word2Dot() {
+          $("#rightFly").children().each(
+            function() {
+              let span = {};
+              span.position = $(this).position();
+              span.width = $(this).width();
+              span.height = $(this).height();
+              span.wordElement = $(this);
+              textSpans.push(span);
+            }
+          );
+
+          $("#rightFly").empty();
+
+          let ns = "http://www.w3.org/2000/svg";
+          let dotSvg = document.createElementNS(ns, "svg");
+          dotSvg.setAttribute("id", "dotSvg");
+          dotSvg.setAttribute("width", $("#rightFly").width());
+          dotSvg.setAttribute("height", $("#rightFly").height());
+          dotSvg.setAttribute("opacity", 0);
+          let padding = $("#rightFly").css("padding-top");
+          padding = parseInt(padding.slice(0, padding.length - 2));
+          $("#rightFly").append($(dotSvg));
+
+          textSpans.forEach(function(span) {
+            var color = span.wordElement.css("color").replace(new RegExp(" ", 'g'), "");
+
+            d3.select("#dotSvg").append("path")
+              .attr("d", "M1,3a2,2 0 1,0 4,0a2,2 0 1,0 -4,0")
+              .attr("transform", 'translate(' + (span.position.left - padding + span.width / 2 - 5) + ' ' + (span.position.top - padding + span.height / 2 - 3) + ')')
+              .attr("data-word", span.wordElement.attr("id"))
+              .attr("class", "wordDots")
+              .attr("stroke", color)
+              .attr("fill", color);
+          });
+
+          $("#dotSvg").fadeOut(100, function() {
+            $("#dotSvg").attr("opacity", 1);
+            $("#dotSvg").fadeIn(500);
+          });
+          dot2Edge(controller, $("#rightFly").width() - padding);
+        }
+
+        function reverseWord2Dot() {
+          $("#dotSvg").fadeOut(100, function() {
+            $("#rightFly").empty();
+            textSpans.forEach(function(span) {
+              let $newElement = span.wordElement;
+              $("#rightFly").append($newElement);
+            });
+            $("#rightFly").fadeIn(1000);
+          });
+        }
+
+        function dot2Edge(controller, rightMostPosition) {
+          let positionArray = [0, rightMostPosition];
+          let dotToEdge = new TimelineMax({});
+          $(".wordDots").each(
+            function() {
+              let toEdge = TweenMax.to($(this), 0.2, {
+                //randomly choose whether dots should go left or right
+                x: positionArray[~~(Math.random() * positionArray.length)]
+              });
+              dotToEdge.add(toEdge, 0); // 0 is important here: make sure points move at the same time!
+            }
+          );
+          dot2Scatter(dotToEdge, controller)
+        }
+
+        function dot2Scatter(dotToEdge, controller) {
+          let svgWidth = $("#dotSvg").width();
+          let svgHeight = $("#dotSvg").height();
+          let padding = $("#rightFly").css("padding-top");
+          padding = parseInt(padding.slice(0, padding.length - 2));
+
+          let xScale = d3.scaleLinear().domain([16, 30]).range([padding, svgWidth - padding]),
+            yScale = d3.scaleLinear().domain([0, 1]).range([svgHeight - padding, padding]);
+
+          // let dotToScatter = new TimelineMax({});
+
+          $(".wordDots").each(
+            function() {
+              let wordTag = rawTags[$(this).attr("data-word").replace(/[.\,\?\"\:\!\”]/g, "")];
+              let wordArray = regression[wordTag];
+              if (wordArray === undefined) {
+                wordArray = regression["Others"];
+              }
+
+              let toEdge = TweenMax.to($(this), 0.2, {
+                //move points
+                x: xScale(wordArray[~~(Math.random() * wordArray.length)].x),
+                y: yScale(wordArray[~~(Math.random() * wordArray.length)].y) - 100
+
+              });
+              dotToEdge.add(toEdge, 1); // 0 is important here: make sure points move at the same time!
+            }
+
+          );
+          new ScrollMagic.Scene({
+              triggerElement: '#31L',
+              reverse: true
+            })
+            .setTween(dotToEdge)
+            .addTo(controller);
+
+          let scatterToLine = new TimelineMax({});
+          let scene = new ScrollMagic.Scene({
+            triggerElement: '#32L',
+            reverse: true
+          }).addTo(controller);
+
+          scene.on("enter", function(event) {
+            $(".wordDots").remove();
+            scatter2Line(svgWidth, svgHeight, padding)
+          });
+        }
+
+        function scatter2Line(svgWidth, svgHeight, padding) {
+          let tl = new TimelineMax({});
+          let xScale = d3.scaleLinear().domain([16, 30]).range([padding, svgWidth - padding]),
+            yScale = d3.scaleLinear().domain([0, 1]).range([svgHeight - padding * 2, padding * 2]);
+
+          let svg = d3.select("#dotSvg");
+          // add the x Axis
+          svg.append("g")
+            .attr("transform", "translate(0, " + (svgHeight - padding - 100) + ")")
+            .call(d3.axisBottom(xScale));
+          svg.append("text")
+            .text("Month")
+            .attr("class", "labelText")
+            .attr("transform", "translate(" + (svgWidth - padding) + ", " + (svgHeight - padding - 100) + ")")
+            .attr("style", "font-weight:bold; font-size:15px");
+
+          // add the y Axis
+          svg.append("g")
+            .attr("transform", "translate(" + (padding) + ",-" + padding + ")")
+            .call(d3.axisLeft(yScale));
+          svg.append("text")
+            .text("Learned Prob")
+            .attr("class", "labelText")
+            .attr("transform", "rotate(-90, 60, 30), translate(0, -10)")
+            .attr("style", "font-weight:bold; font-size:15px");
+
+          // y = a*x^3 + b*x^2 + c*x + d, where a is the last element in each array
+          let lineEquation = {
+            "Noun": [0.7233484773477988, -0.15138944432008716, 0.009152037606421394, -0.0001362843465443881],
+            "Others": [1.3724318218311957, -0.22301701813424146, 0.011292016806998853, -0.00015307066223114663],
+            "Predicates": [1.3731969119458567, -0.20030496117846594, 0.009076370209042662, -0.00011598739302845088],
+            "Function Words": [1.6450450634124225, -0.23483350292878769, 0.010469665003282462, -0.00012721705492078133]
+          };
+          Object.keys(lineEquation).forEach(
+            function(tagName) {
+              let sampledPoints = [];
+              for (let i = 16; i <= 30; i += 3) {
+                let singlePoint = {};
+                singlePoint.x = xScale(i);
+                singlePoint.y = yScale(
+                  lineEquation[tagName][0] +
+                  (lineEquation[tagName][1] * i) +
+                  (lineEquation[tagName][2] * i * i) +
+                  (lineEquation[tagName][3] * Math.pow(i, 3)));
+                sampledPoints.push(singlePoint);
+              }
+
+              let quantity = 30;
+              let duration = 1.5;
+
+              let position = {
+                x: sampledPoints[0].x,
+                y: [sampledPoints[0].y]
+              };
+
+              let lineAnimation = TweenMax.to(position, quantity, {
+                bezier: sampledPoints,
+                ease: Linear.easeNone
+              });
+
+              sampledPoints.shift();
+
+              for (let i = 0; i < quantity; i++) {
+                lineAnimation.time(i); //jumps to the appropriate time in the tween, causing position.x and position.y to be updated accordingly
+                let dot = d3.select("#dotSvg").append("path")
+                  .attr("d", "M1,3a2,2 0 1,0 4,0a2,2 0 1,0 -4,0")
+                  .attr("transform", 'translate(' + (position.x) + ' ' + (position.y - 100) + ')')
+                  .attr("stroke", tagScale(tagName))
+                  .attr("fill", tagScale(tagName))
+                  .style("visibility", "hidden");
+                tl.set(dot.node(), {
+                  visibility: "visible"
+                }, i * (duration / quantity));
+              }
+            }
+          );
+        }
+      });
+    }
+
+    function wordFly(controller, month) {
+      let fromBottomTimeline = new TimelineMax();
+      let words;
+
+      if (month === 30) {
+        words = Object.keys(storyTags);
+      } else {
+        words = getProb(storyTags, regression, month)
+      }
+      // console.log(words);
+      let selector = month.toString() + "W";
+
+      for (let w in words) {
+        if (story.includes(words[w])) {
+          $("[id=" + words[w] + "]").addClass(selector);
+        }
+      }
+
+      let fromBottomFrom = TweenMax.from("." + selector, 1, {
+        y: 1000,
+      });
+
+      let fromBottomTo = TweenMax.to("." + selector, 1, {
+        y: "+=0",
+        overwrite: false,
+        immediateRender: false
+      });
+
+      fromBottomTimeline
+        .add(fromBottomFrom)
+        .add(fromBottomTo); // add to time line
+
+      let scene = new ScrollMagic.Scene({
+          triggerElement: "#" + month + "L",
+          triggerHook: "onEnter", // start "flying" when user enters second page
+        })
+        .setTween(fromBottomTimeline)
+        .addTo(controller);
+
+    }
+  </script>
+</body>
+</html>
